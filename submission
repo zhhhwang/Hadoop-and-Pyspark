@@ -1,0 +1,17 @@
+
+# For submitting jobs to the cluster
+# Access to Flux cluster at the University of Michigan required
+
+# Calculating the sample statistics
+python MRSampleStatistics.py -r hadoop hdfs:///var/stat700002f17/populations_large.txt > summary_large.txt
+
+# Caculating triangle
+spark-submit \
+ --master yarn-client \
+ --queue stat700-002-f17 \
+ --num-executors 35 \
+ --executor-memory 5g \
+ --executor-cores 4 \
+ triangle_count.py /var/stat700002f17/fof/friends1000 big_triangle_list
+ 
+hdfs dfs -cat big_triangle_list/* > big_triangle_list.txt
