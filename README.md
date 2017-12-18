@@ -1,2 +1,2 @@
 # Hadoop-and-Pyspark
-Two projects work with Hadoop and PySpark on University of Michigan flux clusters
+Two projects work with Hadoop and PySpark on the University of Michigan flux clusters
